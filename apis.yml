@@ -1,22 +1,133 @@
 aid: corvera
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/corvera.png
 name: Corvera
-description: Corvera is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Corvera is an AI-native context layer for consumer packaged goods (CPG) brands,
+  backed by Y Combinator (Winter 2026). It unifies data from retailers,
+  distributors, logistics providers, ERP systems, data warehouses, and ecommerce
+  platforms into a single governed source of truth that AI tools can query
+  directly over the Model Context Protocol (MCP). Rather than shipping a
+  traditional REST API or SDKs, Corvera exposes a hosted, OAuth-secured MCP
+  server at https://mcp.corvera.ai/mcp that any MCP-capable tool (Claude, ChatGPT,
+  Cursor, Lovable, Replit) can connect to; the tools an account can call are gated
+  by the integrations it has connected. Capabilities span category management,
+  pricing and promotion ROI, demand forecasting, inventory management, cashflow
+  tracking, and marketing-mix ROI, with role-based dataset access controls, a
+  shared business glossary (Context), canonical entity mappings, and an admin
+  activity feed. The platform normalizes cross-retailer sales calendars, resolves
+  product mappings across sources, and makes governed datasets legible to
+  AI-native CPG teams without dedicated data engineers.
 url: https://raw.githubusercontent.com/api-evangelist/corvera/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - y-combinator
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: portfolio-lead-enriched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- MCP
+- Model Context Protocol
+- CPG
+- Consumer Packaged Goods
+- Retail
+- Data
+- Context Layer
+- AI Agents
+- Analytics
+- Y Combinator
+apis:
+- name: Corvera MCP Server
+  description: >-
+    Corvera's hosted Model Context Protocol server. A single OAuth-secured HTTP
+    MCP endpoint that exposes governed CPG datasets — retailer, distributor,
+    logistics, ERP, warehouse, and ecommerce data — as MCP tools. The tool set
+    available to a connection is gated by the integrations the account has
+    connected. Authentication is OAuth 2.0 (authorization code + PKCE) with
+    dynamic client registration, discoverable via RFC 8414 metadata.
+  humanURL: https://docs.corvera.ai
+  baseURL: https://mcp.corvera.ai/mcp
+  tags:
+  - MCP
+  - Model Context Protocol
+  - CPG
+  - Data
+  properties:
+  - type: MCPServer
+    url: mcp/corvera-mcp.yml
+  - type: Authentication
+    url: authentication/corvera-authentication.yml
+  - type: OAuthScopes
+    url: scopes/corvera-scopes.yml
+  - type: Conventions
+    url: conventions/corvera-conventions.yml
+  - type: Conformance
+    url: conformance/corvera-conformance.yml
+  - type: Quickstart
+    url: https://docs.corvera.ai/quickstart
+  - type: Integrations
+    url: https://docs.corvera.ai/integrations/overview
+common:
+- type: DeveloperPortal
+  url: https://docs.corvera.ai
+- type: Documentation
+  url: https://docs.corvera.ai
+- type: GettingStarted
+  url: https://docs.corvera.ai/quickstart
+- type: MCPServer
+  url: mcp/corvera-mcp.yml
+- type: Authentication
+  url: authentication/corvera-authentication.yml
+- type: OAuthScopes
+  url: scopes/corvera-scopes.yml
+- type: WellKnown
+  url: well-known/corvera-well-known.yml
+- type: LLMsTxt
+  url: llms/corvera-llms.txt
+- type: ChangeLog
+  url: changelog/corvera-changelog.yml
+- type: Conventions
+  url: conventions/corvera-conventions.yml
+- type: Conformance
+  url: conformance/corvera-conformance.yml
+- type: DomainSecurity
+  url: security/corvera-domain-security.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Blog
+  url: https://corvera.ai/blog
+- type: HelpCenter
+  url: https://corvera.ai/faq
+- type: SignUp
+  url: https://corvera.ai/schedule-demo
+- type: PrivacyPolicy
+  url: https://corvera.ai/privacy-policy
+- type: TermsOfService
+  url: https://corvera.ai/terms-conditions
+- type: Website
+  url: https://corvera.ai/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

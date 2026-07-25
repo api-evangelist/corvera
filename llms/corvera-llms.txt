@@ -1,0 +1,21 @@
+# Corvera
+
+> The context layer for AI-native CPG brands. Make your unified data legible to any AI tool via MCP.
+
+## Docs
+
+- [Changelog](https://docs.corvera.ai/changelog.md): What's new in the Corvera context layer.
+- [Catalogue](https://docs.corvera.ai/context-layer/catalogue.md): Browse the governed datasets in your workspace (i.e., what's available to ask about over MCP), organized by how query-ready they are.
+- [Context](https://docs.corvera.ai/context-layer/context.md): The shared business glossary your AI reads — the terms and planning numbers your team uses, written down once so every answer uses them.
+- [Governance](https://docs.corvera.ai/context-layer/governance.md): See who's in your workspace and what they can do — built-in Admin and Member roles, plus custom roles that grant exactly the permissions a person needs.
+- [Mappings](https://docs.corvera.ai/context-layer/mappings.md): Curate how each source's raw values roll up into your canonical entities — review proposals, approve them, and manage your master records.
+- [Concepts & canonical entities](https://docs.corvera.ai/context-layer/ontology.md): This is the vocabulary your context layer is built on. Your concepts, their attributes, and your canonical entities make up your single source of truth.
+- [The context layer](https://docs.corvera.ai/context-layer/overview.md): context.corvera.ai is where your team sees and shapes the governed data your AI tools query.
+- [Sources](https://docs.corvera.ai/context-layer/sources.md): See every system connected to your workspace, how fresh each one is, and whether any need attention.
+- [Integrations](https://docs.corvera.ai/integrations/overview.md): The retail, logistics, enterprise, and ecommerce systems Corvera connects — and what you can pull from each over MCP.
+- [Quickstart](https://docs.corvera.ai/quickstart.md): Connect any AI tool to Corvera's MCP server and run your first query.
+- [Add Corvera to ChatGPT](https://docs.corvera.ai/tutorials/chatgpt.md): Connect Corvera's MCP server to ChatGPT with developer mode.
+- [Add Corvera to Claude](https://docs.corvera.ai/tutorials/claude.md): Connect Corvera's MCP server to Claude Desktop or Claude Code.
+- [Add Corvera to Cursor](https://docs.corvera.ai/tutorials/cursor.md): Connect Corvera's MCP server to Cursor.
+- [Add Corvera to Lovable](https://docs.corvera.ai/tutorials/lovable.md): Connect Corvera's MCP server to Lovable as a chat connector.
+- [Add Corvera to Replit](https://docs.corvera.ai/tutorials/replit.md): Connect Corvera's MCP server to the Replit agent.

@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of Corvera hosts
+hosts:
+  - host: https://mcp.corvera.ai
+    documents:
+      - path: /.well-known/oauth-authorization-server   # RFC 8414
+        status: 200
+        file: corvera-oauth-authorization-server.json
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/security.txt
+        status: 404
+  - host: https://docs.corvera.ai
+    documents:
+      - path: /.well-known/mcp.json                       # MCP discovery (docs-search server, Mintlify)
+        status: 200
+        file: corvera-mcp.json
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+  - host: https://corvera.ai
+    documents:
+      - path: /.well-known/security.txt
+        status: 307        # redirect, no document served
+      - path: /.well-known/oauth-authorization-server
+        status: 307
+notes: >-
+  The product MCP server publishes RFC 8414 OAuth 2.0 authorization-server
+  metadata (issuer, authorization/token/registration endpoints, PKCE S256,
+  dynamic client registration, scopes openid/email/profile/user:org:read). The
+  docs host publishes an MCP discovery document for its Mintlify-hosted
+  documentation-search server. No security.txt is published on any host.

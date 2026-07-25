@@ -1,0 +1,60 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.corvera.ai/quickstart
+docs: https://docs.corvera.ai
+interface:
+  style: mcp
+  transport: http
+  endpoint: https://mcp.corvera.ai/mcp
+  description: >-
+    Corvera exposes its capabilities exclusively as Model Context Protocol tools
+    over a single hosted HTTP endpoint. There is no REST/GraphQL API, SDK, or CLI
+    surface documented; agents interact by calling MCP tools in natural language
+    through an MCP-capable client.
+authentication:
+  style: oauth2-authorization-code
+  pkce: S256
+  dynamic_client_registration: true
+  ref: authentication/corvera-authentication.yml
+authorization:
+  model: >-
+    Two-layer authorization. (1) OAuth scopes (openid, email, profile,
+    user:org:read) establish identity and workspace context. (2) Tool
+    availability is gated per account by connected integrations, and dataset
+    access is further constrained by role-based access controls (built-in Admin
+    and Member roles plus custom roles). Connecting a new data source
+    automatically exposes its tools with no reconfiguration.
+  ref: scopes/corvera-scopes.yml
+tool_gating:
+  documented: true
+  description: >-
+    The set of callable MCP tools depends on which integrations the account has
+    connected. Cross-source tools (list_my_integrations, list_corvera_data,
+    get_corvera_data, resolve_corvera_context) are always present; per-source
+    get_<source>_data tools appear only for connected sources.
+context_layer:
+  glossary: >-
+    A shared business glossary ("Context") holds the team's terms and planning
+    numbers so every AI answer uses consistent definitions.
+  mappings: >-
+    Raw source values roll up into canonical entities via reviewable mappings;
+    proposals are approved before they affect master records.
+  calendar_normalization: >-
+    Cross-retailer sales calendars are normalized so retailers can be compared
+    week-for-week.
+idempotency:
+  supported: unknown
+  notes: >-
+    No idempotency-key contract is documented. Most tool calls are read/query
+    operations against governed data, which are naturally idempotent, but Corvera
+    publishes no explicit idempotency header/parameter — so no Idempotency
+    pointer is asserted.
+pagination:
+  documented: false
+error_handling:
+  documented: false
+  notes: Errors are surfaced through the MCP protocol's tool-result error channel.
+versioning:
+  scheme: rolling
+  changelog: https://docs.corvera.ai/changelog
+  ref: changelog/corvera-changelog.yml

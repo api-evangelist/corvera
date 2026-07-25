@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.corvera.ai/changelog
+scheme: dated
+current_version: '2026-07-17'
+entries:
+  - date: '2026-07-17'
+    title: "Edit your concepts, explore your Catalogue, control who sees what"
+    breaking: false
+    highlights:
+      - Daily KeHE depletions
+      - Two new distributor feeds (Pint Size, Rainforest)
+      - Editable concepts in Context Console
+      - Searchable Catalogue with dataset filtering
+      - Role-based dataset access controls
+      - Admin activity feed tracking AI queries
+  - date: '2026-07-10'
+    title: "VIP depletions and cross-retailer weeks"
+    breaking: false
+    highlights:
+      - VIP depletion sales data
+      - Freshness indicators for connected sources
+      - Tesco and Sainsbury's, week-for-week calendar normalization
+      - Multi-organization Xero support
+  - date: '2026-07-03'
+    title: "New retailer data, and more control in the Console"
+    breaking: false
+    highlights:
+      - Whole Foods daily scan sales
+      - Expanded Tesco supply-chain visibility (general merchandise depots)
+      - Custom admin roles with granular permissions
+      - Simpler product mappings (AI-suggested or manual only)
+  - date: '2026-06'
+    title: "The context layer, so far"
+    breaking: false
+    highlights:
+      - >-
+        Initial platform release with integrations across retailers,
+        distributors, warehouses, ERP systems, and ecommerce
+      - Unified sales calendar and product mapping
+      - Data isolation and access controls
+      - Context Console interface

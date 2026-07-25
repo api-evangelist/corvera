@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: generated
+source: >-
+  Grounded in real published Corvera MCP tools (docs.corvera.ai integrations
+  overview + quickstart). Corvera ships no OpenAPI; skills are grounded in
+  verbatim MCP tool names, not invented operationIds.
+api: mcp/corvera-mcp.yml
+skills:
+  - file: corvera-connect-and-explore.md
+    name: Connect Corvera and explore available data
+    api: mcp/corvera-mcp.yml
+    operations: [list_my_integrations, list_corvera_data, resolve_corvera_context]
+  - file: corvera-cross-retailer-sales.md
+    name: Compare cross-retailer sales week-for-week
+    api: mcp/corvera-mcp.yml
+    operations: [resolve_corvera_context, get_corvera_data, get_tesco_data, get_sainsburys_data, get_whole_foods_data]
+  - file: corvera-distributor-depletions.md
+    name: Track distributor depletions and velocity
+    api: mcp/corvera-mcp.yml
+    operations: [list_my_integrations, get_kehe_velocity_data, get_vip_data, get_unfi_data]
