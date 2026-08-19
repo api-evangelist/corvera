@@ -12,74 +12,85 @@ server:
     pkce: S256
     dynamic_client_registration: true
     authorization_server: https://mcp.corvera.ai/.well-known/oauth-authorization-server
-    scopes: [openid, email, profile, user:org:read]
-  notes: >-
-    A single hosted HTTP MCP endpoint. On first connect the tool opens a Corvera
-    sign-in popup (OAuth). The set of callable tools is gated by the integrations
-    the account has connected — connect a new data source and its tools become
-    available automatically, with no reconfiguration.
+    scopes:
+    - openid
+    - email
+    - profile
+    - user:org:read
+  notes: A single hosted HTTP MCP endpoint. On first connect the tool opens a Corvera sign-in popup (OAuth).
+    The set of callable tools is gated by the integrations the account has connected — connect a new data
+    source and its tools become available automatically, with no reconfiguration.
 docs_mcp:
-  note: >-
-    The docs site also advertises a separate public (auth:none) documentation MCP
-    for searching the docs, discoverable at
-    https://docs.corvera.ai/.well-known/mcp.json (Mintlify-hosted). This is the
+  note: The docs site also advertises a separate public (auth:none) documentation MCP for searching the
+    docs, discoverable at https://docs.corvera.ai/.well-known/mcp.json (Mintlify-hosted). This is the
     docs-search server, distinct from the product MCP above.
   url: https://corvera.main-kill-isr.mintlify.me/mcp
-clients_documented: [Claude Desktop, Claude Code, ChatGPT, Cursor, Lovable, Replit]
+clients_documented:
+- Claude Desktop
+- Claude Code
+- ChatGPT
+- Cursor
+- Lovable
+- Replit
 tools:
-  # Cross-retailer / context tools (documented in integrations overview)
-  - name: list_my_integrations
-    description: List the connected data sources available to query for the account.
-  - name: list_corvera_data
-    description: List available Corvera datasets across connected sources.
-  - name: get_corvera_data
-    description: Retrieve governed cross-source Corvera data.
-  - name: resolve_corvera_context
-    description: Resolve business context / canonical entities for a query.
-  # Per-integration data tools (availability gated by connected sources)
-  - name: get_tesco_data
-    description: Retrieve Tesco retailer data.
-  - name: get_sainsburys_data
-    description: Retrieve Sainsbury's retailer data.
-  - name: get_ocado_data
-    description: Retrieve Ocado retailer data.
-  - name: get_waitrose_data
-    description: Retrieve Waitrose retailer data.
-  - name: get_whole_foods_data
-    description: Retrieve Whole Foods retailer scan data.
-  - name: get_dunnhumby_data
-    description: Retrieve Dunnhumby retail-insights data.
-  - name: get_spins_data
-    description: Retrieve SPINS retail-insights data.
-  - name: get_unfi_data
-    description: Retrieve UNFI distributor data.
-  - name: get_kehe_velocity_data
-    description: Retrieve KeHE distributor velocity/depletion data.
-  - name: get_vip_data
-    description: Retrieve VIP distributor depletion data.
-  - name: get_pintsize_data
-    description: Retrieve Pint Size distributor data.
-  - name: get_rainforest_data
-    description: Retrieve Rainforest distributor data.
-  - name: get_saddle_creek_data
-    description: Retrieve Saddle Creek logistics data.
-  - name: get_fst_logistics_data
-    description: Retrieve FST Logistics data.
-  - name: get_culina_data
-    description: Retrieve Culina logistics data.
-  - name: get_netsuite_data
-    description: Retrieve NetSuite ERP data.
-  - name: get_sap_data
-    description: Retrieve SAP Business One ERP data.
-  - name: get_unleashed_data
-    description: Retrieve Unleashed inventory data.
-  - name: get_deacom_data
-    description: Retrieve Deacom ERP data.
-  - name: get_xero_data
-    description: Retrieve Xero accounting data.
-  - name: get_bigquery_data
-    description: Retrieve BigQuery data-warehouse data.
-  - name: get_shopify_data
-    description: Retrieve Shopify ecommerce data.
-  - name: get_amazon_data
-    description: Retrieve Amazon ecommerce data.
+- name: list_my_integrations
+  description: List the connected data sources available to query for the account.
+- name: list_corvera_data
+  description: List available Corvera datasets across connected sources.
+- name: get_corvera_data
+  description: Retrieve governed cross-source Corvera data.
+- name: resolve_corvera_context
+  description: Resolve business context / canonical entities for a query.
+- name: get_tesco_data
+  description: Retrieve Tesco retailer data.
+- name: get_sainsburys_data
+  description: Retrieve Sainsbury's retailer data.
+- name: get_ocado_data
+  description: Retrieve Ocado retailer data.
+- name: get_waitrose_data
+  description: Retrieve Waitrose retailer data.
+- name: get_whole_foods_data
+  description: Retrieve Whole Foods retailer scan data.
+- name: get_dunnhumby_data
+  description: Retrieve Dunnhumby retail-insights data.
+- name: get_spins_data
+  description: Retrieve SPINS retail-insights data.
+- name: get_unfi_data
+  description: Retrieve UNFI distributor data.
+- name: get_kehe_velocity_data
+  description: Retrieve KeHE distributor velocity/depletion data.
+- name: get_vip_data
+  description: Retrieve VIP distributor depletion data.
+- name: get_pintsize_data
+  description: Retrieve Pint Size distributor data.
+- name: get_rainforest_data
+  description: Retrieve Rainforest distributor data.
+- name: get_saddle_creek_data
+  description: Retrieve Saddle Creek logistics data.
+- name: get_fst_logistics_data
+  description: Retrieve FST Logistics data.
+- name: get_culina_data
+  description: Retrieve Culina logistics data.
+- name: get_netsuite_data
+  description: Retrieve NetSuite ERP data.
+- name: get_sap_data
+  description: Retrieve SAP Business One ERP data.
+- name: get_unleashed_data
+  description: Retrieve Unleashed inventory data.
+- name: get_deacom_data
+  description: Retrieve Deacom ERP data.
+- name: get_xero_data
+  description: Retrieve Xero accounting data.
+- name: get_bigquery_data
+  description: Retrieve BigQuery data-warehouse data.
+- name: get_shopify_data
+  description: Retrieve Shopify ecommerce data.
+- name: get_amazon_data
+  description: Retrieve Amazon ecommerce data.
+deployment:
+  mode: remote
+  endpoint: https://mcp.corvera.ai/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
