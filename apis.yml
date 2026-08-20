@@ -42,6 +42,17 @@ modified: '2026-07-18'
 tags:
 - Company
 - MCP
+- CPG
+- Consumer Packaged Goods
+- Retail
+- Data
+- Context Layer
+- AI Agents
+- Analytics
+- Y Combinator
+tags_raw:
+- Company
+- MCP
 - Model Context Protocol
 - CPG
 - Consumer Packaged Goods
@@ -63,6 +74,10 @@ apis:
   humanURL: https://docs.corvera.ai
   baseURL: https://mcp.corvera.ai/mcp
   tags:
+  - MCP
+  - CPG
+  - Data
+  tags_raw:
   - MCP
   - Model Context Protocol
   - CPG
