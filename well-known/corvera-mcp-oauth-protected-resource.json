@@ -1,0 +1,1 @@
+{"resource":"https://mcp.corvera.ai/mcp","authorization_servers":["https://mcp.corvera.ai/"],"scopes_supported":["openid","email","profile","user:org:read"],"bearer_methods_supported":["header"]}
