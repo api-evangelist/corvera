@@ -94,3 +94,21 @@ deployment:
   probe: gated
   checked: '2026-08-12'
   source: catalog MCP census
+rfc9728:
+  endpoint: https://mcp.corvera.ai/mcp
+  metadata_url: https://mcp.corvera.ai/.well-known/oauth-protected-resource/mcp
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://mcp.corvera.ai/mcp
+    authorization_servers:
+    - https://mcp.corvera.ai/
+    scopes_supported:
+    - openid
+    - email
+    - profile
+    - user:org:read
+    bearer_methods_supported:
+    - header
